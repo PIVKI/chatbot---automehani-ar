@@ -405,7 +405,6 @@ def chat():
 
     session["ctx"] = ctx
     return jsonify({"reply": r})
-from flask import render_template_string
 
 HTML = """
 <!doctype html>
