@@ -405,6 +405,25 @@ def chat():
 
     session["ctx"] = ctx
     return jsonify({"reply": r})
+from flask import render_template_string
+
+HTML = """
+<!doctype html>
+<html>
+<head>
+  <title>Chatbot Automehaničar</title>
+</head>
+<body style="font-family:Arial; padding:20px;">
+  <h2>🚗 Chatbot Automehaničar radi!</h2>
+  <p>Aplikacija je uspješno deployana na Render.</p>
+</body>
+</html>
+"""
+
+@app.route("/")
+def home():
+    return render_template_string(HTML)
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8000)
